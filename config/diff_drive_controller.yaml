@@ -1,0 +1,11 @@
+diff_drive_controller:
+  type: "diff_drive_controller/DiffDriveController"
+  left_wheel_names: ["front_left_wheel_joint", "back_left_wheel_joint"]
+  right_wheel_names: ["front_right_wheel_joint", "back_right_wheel_joint"]
+  wheel_separation: 0.1025  # Distance between left and right wheels
+  wheel_radius: 0.0205      # Radius of the wheels
+  publish_rate: 50
+  cmd_vel_timeout: 0.5
+  use_stamped_vel: false
+  pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+  twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<robot name="cy_borg" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Your robot description -->
+
+  <!-- Differential drive plugin -->
+  <gazebo>
+  <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+
+    <left_joint>front_left_wheel_joint</left_joint>
+    <left_joint>back_left_wheel_joint</left_joint>
+    <right_joint>front_right_wheel_joint</right_joint>
+    <right_joint>back_right_wheel_joint</right_joint>
+
+
+    <wheel_separation>0.1025</wheel_separation>
+    <wheel_radius>0.0205</wheel_radius>
+    <max_wheel_torque>1.0</max_wheel_torque>
+    <max_wheel_acceleration>2.0</max_wheel_acceleration>
+    
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometry_frame>odom</odometry_frame>
+    <odometrySource>world</odometrySource>
+    <publishOdomTF>true</publishOdomTF>
+    <publishTf>1</publishTf>
+    <robot_base_frame>base_link</robot_base_frame>
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+
+  </plugin>
+</gazebo>
+
+
+
+</robot>
+
+
+
+
+</robot>

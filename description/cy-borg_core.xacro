@@ -23,6 +23,7 @@
     <!--BASE LINK-->
 
     <link name="base_link">
+    <origin xyz="0 0 0.5" />
     </link>
 
     <!--CHASSIS LINK-->
@@ -52,6 +53,7 @@
         </xacro:inertial_box>
     </link>
 
+
     <!--FRONT LEFT WHEEL LINK-->
 
     <joint name="front_left_wheel_joint" type="continuous">
@@ -77,6 +79,7 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+
 
     <!--FRONT RIGHT WHEEL LINK-->
 
@@ -104,6 +107,7 @@
         </xacro:inertial_cylinder>
     </link>
 
+
     <!--BACK LEFT WHEEL LINK-->
 
     <joint name="back_left_wheel_joint" type="continuous">
@@ -129,6 +133,7 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+
 
     <!--BACK RIGHT WHEEL LINK-->
 
