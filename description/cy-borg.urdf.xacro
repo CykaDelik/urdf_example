@@ -4,7 +4,8 @@
     <!-- Chassis-->
     <xacro:include filename="cy-borg_core.xacro" />
 
-    <xacro:include filename="gazebo_control.xacro" />
+    <!--<xacro:include filename="gazebo_control.xacro" />-->
 
+    <xacro:include filename="ros2_control.xacro" />
 
 </robot>

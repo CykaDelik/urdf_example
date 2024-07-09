@@ -1,11 +1,32 @@
+# diff_drive_controller.yaml
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
+    update_rate: 30
+
+joint_state_broadcaster:
+  ros__parameters:
+    type: joint_state_broadcaster/JointStateBroadcaster
+
 diff_drive_controller:
-  type: "diff_drive_controller/DiffDriveController"
-  left_wheel_names: ["front_left_wheel_joint", "back_left_wheel_joint"]
-  right_wheel_names: ["front_right_wheel_joint", "back_right_wheel_joint"]
-  wheel_separation: 0.1025  # Distance between left and right wheels
-  wheel_radius: 0.0205      # Radius of the wheels
-  publish_rate: 50
-  cmd_vel_timeout: 0.5
-  use_stamped_vel: false
-  pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
-  twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+  ros__parameters:
+    type: diff_drive_controller/DiffDriveController
+    left_wheel_names: ["front_left_wheel_joint", "back_left_wheel_joint"]
+    right_wheel_names: ["front_right_wheel_joint", "back_right_wheel_joint"]
+    wheel_separation: 0.1025
+    wheel_radius: 0.0205
+    publish_rate: 50
+    cmd_vel_timeout: 0.5
+    use_stamped_vel: false
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    velocity_rolling_window_size: 2
+    enable_odom_tf: true
+    odom_frame_id: "odom"
+    base_frame_id: "base_link"
+    open_loop: false
+    wheel_separation_multiplier: 1.0
+    wheel_radius_multiplier: 1.0
+    cmd_vel_topic: "/cmd_vel"
+    publish_cmd: true
+    use_stamped_vel: false
