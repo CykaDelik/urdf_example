@@ -149,8 +149,7 @@
     </inertial>
   </link>
   <!--<xacro:include filename="gazebo_control.xacro" />-->
-  <!-- Your robot description -->
-  <!-- Differential drive plugin -->
+  <!-- Robot description -->
   <ros2_control name="GazeboSimSystem" type="system">
     <hardware>
       <plugin>gz_ros2_control/GazeboSimSystem</plugin>
@@ -189,7 +188,7 @@
     </joint>
   </ros2_control>
   <gazebo>
-    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+    <plugin filename="/opt/ros/jazzy/lib/libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <robot_param>robot_description</robot_param>
       <robot_param_node>robot_state_publisher</robot_param_node>
       <controller_manager_prefix_node_name>controller_manager</controller_manager_prefix_node_name>

@@ -11,7 +11,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     xacro_file_name = 'description/cy-borg.urdf.xacro'
     urdf_file_name = 'description/cy-borg.urdf'
-    controller_config = os.path.join(get_package_share_directory('cy-borg'), 'config', 'diff_drive_controller.yaml')
+    controller_config = '/home/deck/dev_ws/src/cy-borg/config/diff_drive_controller.yaml'
     package_dir = get_package_share_directory('cy-borg')
     xacro_file = os.path.join(package_dir, xacro_file_name)
     urdf_file = os.path.join(package_dir, urdf_file_name)
@@ -50,7 +50,7 @@ def generate_launch_description():
             package='controller_manager',
             executable='ros2_control_node',
             parameters=[{'use_sim_time': use_sim_time},
-                        os.path.join('/home/deck/dev_ws/src/cy-borg/config', 'diff_drive_controller.yaml')],
+                        controller_config],
             output='screen'
         ),
 
@@ -60,7 +60,7 @@ def generate_launch_description():
                     package='controller_manager',
                     executable='ros2_control_node',
                     parameters=[{'use_sim_time': use_sim_time},
-                                os.path.join('/home/deck/dev_ws/src/cy-borg/config', 'diff_drive_controller.yaml')],
+                                controller_config],
                     output='screen'
                 ),
                 on_start=[
